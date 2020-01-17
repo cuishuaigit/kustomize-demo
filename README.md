@@ -3,6 +3,7 @@ kustomize  demo kubernetes
 Manages declarative configuration of Kubernetes.
 See https://sigs.k8s.io/kustomize
 
+```
 Usage:
   kustomize [command]
 
@@ -21,7 +22,7 @@ Additional help topics:
   kustomize resources          [Alpha] To enable set KUSTOMIZE_ENABLE_ALPHA_COMMANDS=true
 
 Use "kustomize [command] --help" for more information about a command.
-
+```
 
 Usage:
 
