@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: wpt
+spec:
+  template:
+    spec:
+      containers:
+      - name: demo
+        volumeMounts:
+        - mountPath: /data/log
+          name: api-volume
+      volumes:
+      - hostPath:
+          path: /data/log/user-api
+          type: DirectoryOrCreate
+        name: api-volume

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bs
+spec:
+  selector:
+    matchLabels:
+      app: kustomize
+  template:
+    metadata:
+      labels:
+        app: kustomize
+    spec:
+      containers:
+      - name: app
+        image: kustomize:demo
+        envFrom:
+        - configMapRef:
+            name: env-config

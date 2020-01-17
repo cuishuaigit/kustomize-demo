@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+- ../../../base/MICRO
+
+patchesStrategicMerge:
+- container-env.yaml
+# - custom-env.yaml
+- replicate-and-rollout-strategy.yaml
+- service-nodeport.yaml
+- volume.yaml
+
+images:
+- name: kustomize
+  newName: reg.micro.com/micro/user-api
+  newTag: release-toutiao-v0.0.6
+
+commonLabels:
+  micro: user-api
+
+namespace: micro
+
+nameSuffix: -api-user
